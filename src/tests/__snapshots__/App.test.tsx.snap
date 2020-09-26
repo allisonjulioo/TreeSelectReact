@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App/> renders the component 1`] = `
+<div
+  className="app container"
+>
+  <h2>
+    Challenge
+  </h2>
+  <div
+    className="container"
+  >
+    <default_1 />
+    <default_1 />
+    <default_1 />
+    <default_1 />
+    <default_1 />
+    <default_1 />
+  </div>
+</div>
+`;

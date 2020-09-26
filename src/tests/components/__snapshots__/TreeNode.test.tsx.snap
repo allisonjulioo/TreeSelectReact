@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TreeNode/> renders the component 1`] = `
+<label
+  className="checkbox-input"
+>
+  <default_1 />
+  <span>
+    Nome do node
+  </span>
+</label>
+`;
+
+exports[`<TreeNode/> should match default snapshot 1`] = `
+<label
+  className="checkbox-input"
+>
+  <default_1 />
+  <span>
+    Nome do node
+  </span>
+</label>
+`;

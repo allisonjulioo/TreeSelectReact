@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CheckBox/> renders the component 1`] = `
+<input
+  className="checkbox-input"
+  type="checkbox"
+/>
+`;
+
+exports[`<CheckBox/> should match the snapshot 1`] = `[Function]`;

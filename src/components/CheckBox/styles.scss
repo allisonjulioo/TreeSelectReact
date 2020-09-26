@@ -1,0 +1,10 @@
+.checkbox-input {
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  &:hover {
+    background: cornsilk;
+  }
+}
