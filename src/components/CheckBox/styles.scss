@@ -1,10 +1,23 @@
-.checkbox-input {
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  user-select: none;
-  &:hover {
-    background: cornsilk;
+@import '../../styles/';
+
+.checkbox {
+  position: relative;
+  border: 2px solid;
+  border-radius: 2px;
+  border-color: darken($grey, 30%);
+  width: $spacing * 3;
+  height: $spacing * 3;
+  text-align: center;
+  margin-right: $spacing * 2;
+  line-height: 0.8;
+  &.checked {
+    background: $primary;
+    border-color: $primary;
+  }
+  &__icon {
+  }
+  &__input {
+    position: absolute;
+    visibility: hidden;
   }
 }
