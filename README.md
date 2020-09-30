@@ -18,16 +18,20 @@ Tenho plena segurança que esse teste não pode ser considerado para uma vaga S�
 
 <details>
  <summary>Bugs</summary>
-   - Seleção múltipla
-   - Listagem
-   - Testes
+- Seleção múltipla
+- Listagem
+- Testes
 </details>
 
+<details>
+ <summary>Bugs</summary>
+...projeto,
+- Testes, 
+- usabilidade
+</details>
 ### incompletos
- ...projeto,
- - Testes, 
- - usabilidade
 
-# Obs 
+
+### Obs 
 Considerem please =)
  
