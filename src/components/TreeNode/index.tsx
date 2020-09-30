@@ -4,6 +4,7 @@ import CheckBox from '../CheckBox';
 import { IPropsTreeNode } from '../../models/PropsTreeNode.interface';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import './styles.scss';
+import { arrNode } from '../../utils/nodeArr';
 
 /**
  * @param TreeNode
@@ -14,45 +15,61 @@ export default class extends Component<IPropsTreeNode, IPropsTreeNode> {
     this.state = {
       ...this.props,
     };
+    this.handleChangeCheckBox = this.handleChangeCheckBox.bind(this);
+    this.handleCheckChildren = this.handleCheckChildren.bind(this);
   }
-  private toogleAccordion = (event: MouseEvent): void => {
+  private handleToogleAccordion(event: MouseEvent): void {
     event.preventDefault();
     this.setState((prevState: IPropsTreeNode) => ({
       toggled: !prevState.toggled,
       checked: prevState.checked,
     }));
-  };
+  }
 
-  private checkboxChanged = (node: IPropsTreeNode = this.state): void => {
-    if (node && node.children) {
-      for (let i = 0, l = node.children.length; i < l; ++i) {
-        const child = node.children[i];
-        child.checked = node.checked;
-        if (!child.id) {
-          child.id = node.id || '0';
-        }
-        this.checkboxChanged(child);
-        this.setState({ ...node, checked: !node.checked });
-      }
+  private handleChangeCheckBox(checked: boolean): void {
+    let node = this.state;
+    node = { ...node, checked: !checked };
+    if (arrNode('keys', node.children).length > 0) {
+      this.handleCheckChildren(node, !checked);
     }
-  };
+    this.setState({ ...node, checked });
+  }
+
+  private handleCheckChildren(node: IPropsTreeNode, parent: boolean) {
+    arrNode('values', node.children).forEach((child) => {
+      if (arrNode('keys', child.children).length > 0) {
+        child.checked = parent;
+        return this.handleCheckChildren(child, parent);
+      }
+      child.checked = parent;
+      return child;
+    });
+  }
+
   render() {
+    const { name, children, toggled } = this.state; 
     return (
       <div className="step-node">
         <label className="step-node__tree">
-          <CheckBox value={this.state.name} checked={this.state.checked} change={() => this.checkboxChanged()} />
-          <span>{this.state.name}</span>
-          {this.state.children.length > 0 && (
-            <button className="step-node__action" onClick={(event) => this.toogleAccordion(event)}>
-              {this.state.toggled ? <FaChevronUp color="#00b4f0" /> : <FaChevronDown />}
+          <CheckBox {...this.state} change={this.handleChangeCheckBox} />
+          <span>{name}</span>
+          {arrNode('keys', children).length > 0 && (
+            <button className="step-node__action" onClick={(event) => this.handleToogleAccordion(event)}>
+              {toggled ? <FaChevronUp color="#00b4f0" /> : <FaChevronDown />}
             </button>
           )}
         </label>
+        {this.renderChildrens()}
+      </div>
+    );
+  }
 
-        <div className={`step-node__children ${this.state.toggled ? 'oppened' : 'collapsed'}`}>
-          {this.state.children.length > 0 &&
-            this.state.children.map((children) => <TreeNode {...children} key={children.id} />)}
-        </div>
+  private renderChildrens() {
+    const { toggled, ...node } = this.state;
+    return (
+      <div className={`step-node__children ${toggled ? 'oppened' : 'collapsed'}`}>
+        {arrNode('keys', node.children).length > 0 &&
+          arrNode('values', node.children).map((children) => <TreeNode {...children} key={children.id} />)}
       </div>
     );
   }

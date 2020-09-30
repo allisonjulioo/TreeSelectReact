@@ -1,31 +1,34 @@
 import React, { PureComponent } from 'react';
 import { FaCheck } from 'react-icons/fa';
 import './styles.scss';
+import { IPropsCheckBox } from '../../models/PropsCheckBox.interface';
 
-export interface IPropsCheckBox {
-  value: string;
-  checked: boolean;
-  change: () => void;
-}
-export default class extends PureComponent<IPropsCheckBox, { checked: boolean }> {
+export default class extends PureComponent<IPropsCheckBox, IPropsCheckBox> {
   constructor(props: IPropsCheckBox) {
     super(props);
-    this.state = { checked: this.props.checked };
+    this.state = {
+      ...this.props,
+      checked: this.props.checked || false,
+    };
   }
-  componentDidUpdate(prevProps: any, prevState: any, snapshot: any) {
-    // console.log(prevProps, prevState);
+  componentDidUpdate(props: IPropsCheckBox) {
+    console.log(props);
   }
   render() {
+    const { checked, name } = this.props;
     return (
-      <div className={`checkbox ${this.props.checked && 'checked'}`}>
-        <span className="checkbox__icon">{this.props.checked && <FaCheck size="12" color="white" />}</span>
+      <div className={`checkbox ${checked && 'checked'}`}>
+        <span className="checkbox__icon">{checked && <FaCheck size="12" color="white" />}</span>
         <input
           type="checkbox"
           className="checkbox__input"
-          checked={this.state.checked}
-          value={this.props.value}
+          checked={checked}
+          value={name}
           onChange={() => {
-            this.props.change();
+            this.setState({
+              checked: !this.state.checked,
+            });
+            this.state.change(this.state.checked);
           }}
         />
       </div>
