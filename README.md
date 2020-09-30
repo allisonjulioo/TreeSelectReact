@@ -1,6 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+## Sobre o projeto
 
 É um projeto simples em react, não vai precisar fazer muita coisa para ele rodar, existe um json server que ia fazer uma espécie de serveless para guardar os dados mas não deu.
 Então ele tá de bobeira no projeto. Mas o duc funciona
@@ -17,10 +15,13 @@ Pra rodar e instalar é só colocar essa linha toda de código no terminal
 Eu escrevi esse teste usando react, mas não consegui fazer tudo que tinha planejado. O cansaço me derrubou e ele teve uma ajuda do lugar onde trabalho atualmente. 
 Tenho plena segurança que esse teste não pode ser considerado para uma vaga Sênior, mas como prometido estou enviando o que consegui evoluir. 
 
-### Bugs
-- Seleção múltipla
-- Listagem
-- Testes
+
+<details>
+ <summary>Bugs</summary>
+   - Seleção múltipla
+   - Listagem
+   - Testes
+</details>
 
 ### incompletos
  ...projeto,
