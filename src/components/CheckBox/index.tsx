@@ -11,11 +11,8 @@ export default class extends PureComponent<IPropsCheckBox, IPropsCheckBox> {
       checked: this.props.checked || false,
     };
   }
-  componentDidUpdate(props: IPropsCheckBox) {
-    console.log(props);
-  }
   render() {
-    const { checked, name } = this.props;
+    const { checked, name } = this.state;
     return (
       <div className={`checkbox ${checked && 'checked'}`}>
         <span className="checkbox__icon">{checked && <FaCheck size="12" color="white" />}</span>

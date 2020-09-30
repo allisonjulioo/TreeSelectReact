@@ -3,5 +3,6 @@ export interface IPropsTreeNode {
   id?: string;
   toggled: boolean;
   checked: boolean;
-  children: IPropsTreeNode[];
+  children: IPropsTreeNode;
+  changeCheckBox?: (args: IPropsTreeNode) => any;
 }

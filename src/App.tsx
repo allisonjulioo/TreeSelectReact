@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import TreeNode from './components/TreeNode';
-import mock from './mocks/tree';
+import data from './mocks/data';
+import TreeView from './components/TreeView';
 
 export default class extends Component {
-  componentDidMount() {}
   render() {
     return (
       <div className="container">
         <h2>Challenge</h2>
         <div className="container content-node">
-          {[mock].map((data) => (
-            <TreeNode {...data} key={data.id} />
-          ))}
+          <TreeView nodes={data} />
         </div>
       </div>
     );
