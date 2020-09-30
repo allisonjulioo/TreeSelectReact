@@ -24,7 +24,7 @@ Tenho plena segurança que esse teste não pode ser considerado para uma vaga S�
 </details>
 
 <details>
- <summary>Bugs</summary>
+ <summary>Incompletos</summary>
 ...projeto,
 - Testes, 
 - usabilidade
