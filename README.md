@@ -6,32 +6,5 @@ Então ele tá de bobeira no projeto. Mas o duc funciona
 Pra rodar e instalar é só colocar essa linha toda de código no terminal
 
  `git clone https://github.com/allisonjulioo/TreeSelectReact.git && npm install && npm run start`
-
-
-
-
-## Overview
-
-Eu escrevi esse teste usando react, mas não consegui fazer tudo que tinha planejado. O cansaço me derrubou e ele teve uma ajuda do lugar onde trabalho atualmente. 
-Tenho plena segurança que esse teste não pode ser considerado para uma vaga Sênior, mas como prometido estou enviando o que consegui evoluir. 
-
-
-<details>
- <summary>Bugs</summary>
-- Seleção múltipla
-- Listagem
-- Testes
-</details>
-
-<details>
- <summary>Incompletos</summary>
-...projeto,
-- Testes, 
-- usabilidade
-</details>
-### incompletos
-
-
-### Obs 
-Considerem please =)
+ 
  
