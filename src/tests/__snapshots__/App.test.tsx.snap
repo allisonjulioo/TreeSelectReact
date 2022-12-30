@@ -5,7 +5,7 @@ exports[`<App/> renders the component 1`] = `
   className="app container"
 >
   <h2>
-    Challenge
+    Dropdown Three Select
   </h2>
   <div
     className="container"
